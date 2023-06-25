@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-tenant-schema
+      author: Sunit Kale
+      changes:
+        - createTable:
+            tableName: tenant-schema
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: tenant-name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: schema_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true

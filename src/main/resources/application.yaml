@@ -1,0 +1,15 @@
+spring:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: myusername
+      password: mypassword
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      properties:
+          format_sql: true
+          jdbc:
+            lob:
+              non_contextual_creation: true
+    liquibase:
+      change-log: classpath:db/master.yaml
+      enabled: true
